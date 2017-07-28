@@ -27,10 +27,6 @@ body {
     font-family: $font-stack;
     font-size: $font-size-s;
     line-height: 1.4;
-
-    @media (min-width: $mq-m) {
-        font-size: $font-size-m;
-    }
 }
 
 /**
