@@ -65,7 +65,8 @@ article {
     p,
     ul,
     ol {
-        max-width: $max-text-width;
+        // TODO: Fix this
+        //  max-width: $max-text-width;
     }
 }
 a {

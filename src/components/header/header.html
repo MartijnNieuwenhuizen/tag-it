@@ -1,7 +1,9 @@
 <header class="header">
     <div class="layout__inner">
-        <div class="header__columns">
-            {% include './_header-logo.html' %}
-        </div>
+        {{ include('../nav/_nav.html', {
+            viewModel: json('../nav/_nav-data.json')
+        }) | safe }}
+
+        {% include '../search/_search.html' %}
     </div>
 </header>
