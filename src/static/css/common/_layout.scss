@@ -1,5 +1,5 @@
 body {
-    background: $color-grey-light;
+    // background: $color-grey-light;
 }
 
 .layout {
@@ -13,9 +13,9 @@ body {
         margin: 0 auto;
         padding: 1em;
 
-        @media (min-width: $mq-l) {
-            padding: 2em;
-        }
+        // @media (min-width: $mq-l) {
+        //     padding: 2em;
+        // }
     }
 
 }

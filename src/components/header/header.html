@@ -1,7 +1,8 @@
 <header class="header">
     <div class="layout__inner">
-        {{ include('../nav/_nav.html', {
-            viewModel: json('../nav/_nav-data.json')
+        {{ include('/nav/_nav.html', {
+            viewData: json('/nav/_nav-data.json'),
+            translations: json('/nav/_nav.nl.json')
         }) | safe }}
 
         {% include '../search/_search.html' %}

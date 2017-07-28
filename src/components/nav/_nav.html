@@ -1,5 +1,13 @@
-<nav>
-    <ul>
-        <li><p id="user-fullname">{{ viewData.name }}</p></li>
+<nav class="nav">
+    <ul class="nav--list">
+        <li class="nav--item nav--logo"><a class="nav--link" href="/">
+            <img src="http://lorempixel.com/400/200/" alt="Tag-it Logo">
+        </a></li>
+
+        {% for link in viewData %}
+            <li class="nav--item"><a class="nav--link" href="{{ link.href }}">{{ link.title }}</a></li>
+        {% else %}
+            <li class="nav--item"><a class="nav--link" href="{{ link.href }}">{{ link.title }}</a></li>
+        {% endfor %}
     </ul>
 </nav>

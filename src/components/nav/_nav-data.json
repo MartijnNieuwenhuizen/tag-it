@@ -1,3 +1,15 @@
-{
-  "name": "Dhr. J.P. van der Naam"
-}
+[
+    {
+        "title": "Home",
+        "href": "/"
+    }, {
+        "title": "List",
+        "href": "/list"
+    }, {
+        "title": "About",
+        "href": "/about"
+    }, {
+        "title": "Contact",
+        "href": "/contact"
+    }
+]
