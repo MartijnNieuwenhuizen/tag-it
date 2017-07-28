@@ -39,14 +39,11 @@ h2, .h2 {
 }
 h1, .h1 {
     font-size: $font-size-xl;
-    color: $color-primary;
 }
 h2, .h2 {
     font-size: $font-size-l;
-    color: $color-secondary;
 }
 .subtitle {
-    color: $color-secondary;
 
     h1 + & {
         margin-top: -1em;
@@ -68,9 +65,6 @@ article {
         // TODO: Fix this
         //  max-width: $max-text-width;
     }
-}
-a {
-    color: $color-secondary;
 }
 
 /**

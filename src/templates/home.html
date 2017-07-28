@@ -6,8 +6,13 @@
         {% include 'header/header.html' %}
 
         <main class="layout__inner">
-            <h1>{{ translations.h1 }}</h1>
-            <p><a class="cta" href="/templates/login-bsn-form.html">{{ translations.cta }}</a></p>
+            <div class="layout--aside">
+                {% include 'filter/filter.html' %}
+
+                {{ include('articles/articles.html', {
+                    viewData: json('articles/articles-data.json')
+                }) | safe }}
+            </div>
         </main>
 
         {{ include('footer/footer.html', {

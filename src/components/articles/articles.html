@@ -1,0 +1,7 @@
+<ul class="articles">
+    {% for article in viewData %}
+        {% include './article.html' %}
+    {% else %}
+        <p class="error">No articles found</p>
+    {% endfor %}
+</ul>

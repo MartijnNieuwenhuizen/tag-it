@@ -1,0 +1,19 @@
+<li class="article">
+    <a class="article--link" href="#">
+        <article class="article--article">
+            <img class="article--img" src="{{ article.imgLink }}" alt="">
+            <h2 class="article--title">{{ article.title }}</h2>
+            <p class="article--intro">{{ article.intro }}</p>
+
+            <ul class="article--tags">
+                {% for tag in article.tags %}
+                    <li class="article--tag">
+                        <a href="#tag">#{{ tag }}</a>
+                    </li>
+                {% else %}
+                    <p class="error">No tags with this article</p>
+                {% endfor %}
+            </ul>
+        </article>
+    </a>
+</li>
