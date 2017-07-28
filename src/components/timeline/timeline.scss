@@ -1,0 +1,45 @@
+.timeline {
+
+    margin: 0 -1em;
+    padding: 1em;
+    background: $color-grey-light;
+
+    @media (min-width: $mq-l) {
+        margin: 0 -2em;
+        padding: 2em;
+    }
+
+    &__section {
+        margin: -.5em;
+        padding: 1em;
+        border: 1px solid $color-grey-dark;
+        border-radius: $default-radius;
+        background: $color-white;
+
+        @media (min-width: $mq-m) {
+            margin: -1em;
+            padding: 2em;
+        }
+        @media (min-width: $mq-xl) {
+            margin: 0;
+            padding: 2em;
+        }
+    }
+
+    &__section + &__section {
+        margin-top: 1em;
+        @media (min-width: $mq-m) {
+            margin-top: 2em;
+        }
+    }
+
+    &__subsection {
+        padding-bottom: 1em;
+        border-bottom: 1px solid $color-grey-dark;
+    }
+
+    &__subfooter {
+        margin-top: 2em;
+    }
+
+}

@@ -1,0 +1,45 @@
+{% extends '../layout/default.html' %}
+
+{% block body %}
+    <div class="layout__outer">
+
+        {{ include('header/header-loggedin.html', {
+            viewModel: json('header/header-data.json'),
+            translations: json('header/header-translations.nl.json')
+        }) | safe }}
+
+        <main class="layout__inner">
+            <h1>{{ translations.h1 }}</h1>
+            <div class="timeline">
+
+                <section class="timeline__section">
+                    {# @todo Refactor to viewData/translations files #}
+                    {{ include('pu-item-nu/pu-item-nu-aow.html', {}) | safe }}
+                </section>
+
+                <section class="timeline__section">
+                    {{ include('pu-item-nu/pu-item-nu-pensioen.html', {
+                        viewModel: json('pu-item-nu/pu-item-nu-data.json'),
+                        translations: json('pu-item-nu/pu-item-nu-translations.nl.json')
+                    }) | safe }}
+                </section>
+
+                <section class="timeline__section">
+                    <h2>{{ translations.disclaimer.h2 }}</h2>
+                    <ul>
+                        {% for bullet in translations.disclaimer.bullets %}
+                        <li>{{ bullet }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+
+            </div>
+        </main>
+
+        {{ include('footer/footer.html', {
+            viewModel: json('footer/footer-data.json'),
+            translations: json('footer/footer-translations.nl.json')
+        }) | safe }}
+
+    </div>
+{% endblock %}

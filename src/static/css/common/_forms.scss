@@ -1,0 +1,29 @@
+.form {
+    fieldset {
+        margin: 0 0 1em 0;
+        border: 0;
+        padding: 0;
+    }
+}
+
+.form__row {}
+
+.form__label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.form__field {
+    display: inline-block;
+    padding: .5em .75em;
+    border: 1px solid $color-grey-dark;
+    border-radius: $default-radius;
+    background: $color-white;
+
+    &:invalid {
+        border-color: $color-primary;
+    }
+
+    &[type=text],
+    &[type=number] {}
+}

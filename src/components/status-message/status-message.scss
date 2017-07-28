@@ -1,0 +1,10 @@
+h1.cta {
+    display: block;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-primary;
+    }
+
+}

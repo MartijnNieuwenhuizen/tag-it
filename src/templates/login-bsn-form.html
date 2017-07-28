@@ -1,0 +1,35 @@
+{% extends '../layout/default.html' %}
+
+{% block body %}
+    <div class="layout__outer">
+
+        {{ include('header/header.html', {
+            viewModel: json('header/header-data.json'),
+            translations: json('header/header-translations.nl.json')
+        }) | safe }}
+
+        <main class="layout__inner">
+            <h1>Welkom op Mijnpensioenoverzicht.nl</h1>
+            <p>Welkom op de demosite van stichting pensioenregister. Om in te loggen op de demo website maakt u gebruik van de BSN nummers die door het pensioenregister verstrekt zijn.</p>
+            <form class="form" action="/templates/mijn-gegevens.html" method="get">
+                <fieldset>
+                    <div class="form__row">
+                        <label for="bsn" class="form__label">
+                            Vul BSN in:
+                        </label>
+                        <input id="bsn" name="bsn" type="text" class="form__field" pattern="[0-9]{9}" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <p><button type="submit" class="cta">Login</button></p>
+                </fieldset>
+            </form>
+        </main>
+
+        {{ include('footer/footer.html', {
+            viewModel: json('footer/footer-data.json'),
+            translations: json('footer/footer-translations.nl.json')
+        }) | safe }}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+body {
+    background: $color-grey-light;
+}
+
+.layout {
+
+    &__outer {
+        background: white;
+    }
+
+    &__inner {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 1em;
+
+        @media (min-width: $mq-l) {
+            padding: 2em;
+        }
+    }
+
+}

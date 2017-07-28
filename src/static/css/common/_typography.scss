@@ -1,0 +1,135 @@
+/**
+ * Font sizes
+ */
+$font-size-m: 16px;
+$font-size-s: $font-size-m * .875;
+$font-size-l: $font-size-m * 1.125;
+$font-size-xl: $font-size-m * 1.625;
+
+/**
+ * Font stack
+ */
+$font-stack:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+
+body {
+    font-family: $font-stack;
+    font-size: $font-size-s;
+    line-height: 1.4;
+
+    @media (min-width: $mq-m) {
+        font-size: $font-size-m;
+    }
+}
+
+/**
+ * Headers
+ */
+h1, .h1,
+h2, .h2 {
+    max-width: $max-text-width;
+    margin-top: 0;
+}
+h1, .h1 {
+    font-size: $font-size-xl;
+    color: $color-primary;
+}
+h2, .h2 {
+    font-size: $font-size-l;
+    color: $color-secondary;
+}
+.subtitle {
+    color: $color-secondary;
+
+    h1 + & {
+        margin-top: -1em;
+    }
+
+    a {
+        color: darken($color-secondary, 10%);
+    }
+}
+
+/**
+ * Body copy
+ */
+main,
+article {
+    p,
+    ul,
+    ol {
+        max-width: $max-text-width;
+    }
+}
+a {
+    color: $color-secondary;
+}
+
+/**
+ * Links & Buttons
+ */
+button {
+    font: inherit;
+}
+.cta {
+    position: relative;
+    display: inline-block;
+    padding: .45em 2em .55em .75em;
+    border-radius: $default-radius;
+    color: $color-white;
+    background: $color-primary;
+    font-size: $font-size-l;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    transition: background $default-transition-time $default-transition-easing;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: darken($color-primary, 10%);
+    }
+
+    &[disabled] {
+        opacity: .3;
+        cursor: not-allowed;
+    }
+
+    &:after {
+        content: '';
+        @include position(absolute, .7em .7em false false);
+        @extend .svg-cta-arrow;
+        @extend .svg-cta-arrow-dims;
+        transform: scale(.85);
+    }
+}
+a.cta {}
+button.cta {
+    border-width: 0;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/**
+ * Lists
+ */
+ul,
+ol {
+    padding-left: 1.5em;
+    li {
+        margin-bottom: .3em;
+    }
+}

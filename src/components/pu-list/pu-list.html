@@ -1,0 +1,20 @@
+<ul id="mijngegevens-pensioenuitvoerders" class="pu-list"
+  data-module="pu-list/pu-list"
+  data-get-pu-status-url="/static/js/data/get-pu-status.json?id={id}"
+  data-get-pu-failure-url="/svb-failure">
+    <li data-pu-id="svb">
+        <div class="pu-list__logo"></div>
+        <div class="pu-list__pu">Sociale Verzekeringsbank</div>
+        <div class="pu-list__status" data-loading data-status>Gegevens ophalen</div>
+    </li>
+    <li data-pu-id="2">
+        <div class="pu-list__logo"></div>
+        <div class="pu-list__pu">Toffe pensioenboer</div>
+        <div class="pu-list__status" data-failure data-status>Fout</div>
+    </li>
+    <li data-pu-id="3">
+        <div class="pu-list__logo"></div>
+        <div class="pu-list__pu">Minder toffe pensioenboer</div>
+        <div class="pu-list__status" data-success data-status>Gegevens ontvangen</div>
+    </li>
+</ul>

@@ -1,0 +1,22 @@
+{% extends '../layout/default.html' %}
+
+{% block body %}
+    <div class="layout__outer">
+
+        {{ include('header/header.html', {
+            viewModel: json('header/header-data.json'),
+            translations: json('header/header-translations.nl.json')
+        }) | safe }}
+
+        <main class="layout__inner">
+            <h1>{{ translations.h1 }}</h1>
+            <p><a class="cta" href="/templates/login-bsn-form.html">{{ translations.cta }}</a></p>
+        </main>
+
+        {{ include('footer/footer.html', {
+            viewModel: json('footer/footer-data.json'),
+            translations: json('footer/footer-translations.nl.json')
+        }) | safe }}
+
+    </div>
+{% endblock %}

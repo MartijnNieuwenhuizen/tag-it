@@ -1,0 +1,44 @@
+.header {
+
+    border-bottom: 1px solid $color-grey-dark;
+    background: $color-grey-light;
+
+    @media (min-width: $mq-m) {
+        &__columns {
+            display: flex;
+        }
+        &__logo {
+            flex-grow: 1;
+        }
+        &__loggedin {
+            flex-shrink: 1;
+        }
+    }
+
+    &__loggedin {
+        font-weight: bold;
+        p {
+            margin: .7em 0 0 0;
+            @media (min-width: $mq-l) {
+                margin: 1em 0 0 0;
+            }
+        }
+    }
+
+    &__logo {
+        margin: 0;
+        a {
+            display: inline-block;
+        }
+        img {
+            @media (min-width: $mq-l) {
+                width: 284px * 1.2;
+                height: 46px * 1.2;
+            }
+            @media (min-width: $mq-l + 100) {
+                margin-left: -2em;
+            }
+        }
+    }
+
+}

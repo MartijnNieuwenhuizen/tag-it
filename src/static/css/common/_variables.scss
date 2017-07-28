@@ -1,0 +1,32 @@
+$white: #ffffff;
+$snowWhite: #f9f9f9;
+$black: #000000;
+$gray: #565656;
+$gray-lighten: lighten($gray, 20%);
+$darkGray: hsl(0, 0%, 20%);
+
+$color-primary: hsla(160, 25%, 50%, 1);
+$color-primary-lighter: lighten($prime-color, 20%);
+$color-secondary: hsla(360, 50%, 65%, 1);
+$color-secondary-lighter: lighten($secondary-color, 10%);
+$accent-color: hsla(180, 50, 50, 1);
+
+$font: $gray;
+
+$projects: (
+	wies-en-de-liefde: hsla(11, 63%, 42%, 1),
+	go: hsla(50, 99%, 50%, 1),
+	margatsni: hsla(206, 43%, 42%, 1),
+	struikrover: hsla(93, 22%, 51%, 1),
+	akzidenz: hsla(0, 0%, 21%, 1),
+	data: hsla(93, 43%, 65%, 1),
+	damco: hsla(142, 100%, 34%, 1),
+	github: hsla(0, 0%, 100%, 1)
+);
+
+// http://easings.net/#easeOutCubic
+$default-transition-easing: cubic-bezier(0.215, 0.61, 0.355, 1);
+$default-transition-time: 100ms;
+
+
+// Breakpoints

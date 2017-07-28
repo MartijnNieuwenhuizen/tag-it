@@ -1,0 +1,20 @@
+image: node:7.7.4
+
+pipelines:
+
+  custom: # Pipelines that are triggered manually
+    manual-deploy:
+      - step:
+          script:
+            - npm install
+
+  default:
+    - step:
+        script:
+          - npm install
+
+  branches:
+    master:
+      - step:
+          script:
+            - npm install

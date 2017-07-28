@@ -1,0 +1,69 @@
+.pu-list {
+    margin: 0 0 2em;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: flex;
+    }
+
+    &__logo {
+        /* not implemented yet */
+        display: none;
+    }
+
+    &__pu {
+        font-weight: bold;
+        padding: 1em 0;
+        border-bottom: 1px solid $color-grey-dark;
+        width: 70%;
+    }
+
+    &__status {
+        padding: 1em 0;
+        border-bottom: 1px solid $color-grey-dark;
+        width: 30%;
+
+        &[data-loading]::before {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin: 2px 0 0 -30px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            border-top-color: $color-off-black;
+            font-size: 26px;
+            animation: spinner .6s linear infinite;
+        }
+
+        &[data-failure]::before {
+            content: '×';
+            color: $color-failure;
+            text-align: center;
+            box-sizing: border-box;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin: -17px 0 0 -30px;
+            font-size: 36px;
+        }
+
+        &[data-success]::before {
+            content: '✓';
+            box-sizing: border-box;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin: -8px 0 0 -30px;
+            text-align: center;
+            font-size: 26px;
+            color: $color-success;
+        }
+    }
+
+    @keyframes spinner {
+        to { transform: rotate(360deg); }
+    }
+}

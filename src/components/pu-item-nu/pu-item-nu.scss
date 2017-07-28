@@ -1,0 +1,240 @@
+/* @todo https://jdsteinbach.com/css/snippet-animate-display-transform/
+@keyframes pu-item-nu-toggle {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+} */
+
+.pu-item-nu {
+
+    &--aow,
+    &--pensioen {
+        &__trigger {
+            position: relative;
+            display: flex;
+
+            // Pseudo before is used for the AOW icon
+            &::before {
+                content: '';
+                display: inline-block;
+
+                transform: scale(.7);
+                transform-origin: left top;
+                @media (min-width: $mq-m) {
+                    transform: scale(1);
+                }
+            }
+
+            > h2 {
+                margin: .5em 0 0;
+                @media (min-width: $mq-m) {
+                    margin-top: 1em;
+                    margin-left: 1em;
+                }
+            }
+        }
+    }
+
+    &--aow {
+        &__trigger {
+            &::before {
+                @extend .svg-aow;
+                @extend .svg-aow-dims;
+            }
+        }
+    }
+
+    &--pensioen {
+
+        &__section {
+            padding: 2em 0 1em;
+        }
+
+        &__section + &__section {
+            border-top: 2px solid $color-off-black;
+        }
+
+        &__trigger {
+            &::before {
+                @extend .svg-pensioen;
+                @extend .svg-pensioen-dims;
+            }
+        }
+
+        &__subtitle {
+            color: $color-primary;
+        }
+
+    }
+
+    &__trigger[data-initialized=true] {
+        position: relative;
+        cursor: pointer;
+
+        height: 40px;
+        @media (min-width: $mq-m) {
+            height: 60px;
+        }
+
+        // Pseudo after is used for the toggle icon
+        &::after {
+            content: '';
+            display: block;
+            @extend .svg-toggle;
+            @extend .svg-toggle-dims;
+
+            @include position(absolute, .5em 0 false false);
+            @media (min-width: $mq-m) {
+                top: 1em;
+            }
+
+            transition: transform $default-transition-time $default-transition-easing;
+            transform: scale(.7);
+            @media (min-width: $mq-m) {
+                transform: scale(1);
+            }
+        }
+        &[data-toggle-active=true]::after {
+            transform: scale(.7) rotate(-90deg);
+            @media (min-width: $mq-m) {
+                transform: scale(1) rotate(-90deg);
+            }
+        }
+        &[data-toggle-active=false]::after {
+            transform: scale(.7);
+            @media (min-width: $mq-m) {
+                transform: scale(1);
+            }
+        }
+
+    }
+
+    &__toggle {
+        @media (min-width: $mq-m) {
+            margin-left: 5em;
+        }
+        @media (min-width: $mq-l) {
+            margin: 0 4em 0 5em;
+        }
+
+        /* @todo animation: pu-item-nu-toggle $default-transition-time $default-transition-easing; */
+        &[data-initialized=true][data-toggle-active=true] {
+            display: none;
+        }
+        &[data-toggle-active=false] {
+            display: block;
+        }
+    }
+
+    &__btn {
+        display: none;
+    }
+
+}
+
+.pu-item-nu-rows {
+
+    /**
+     * Section header
+     */
+    &__subtitles {
+        display: flex;
+        margin-bottom: 1em;
+        border-bottom: 1px solid $color-grey-dark;
+        padding-bottom: 1em;
+
+    }
+    &__col {
+        > h3 {
+            margin: 0;
+            font-weight: bold;
+            font-size: $font-size-m;
+        }
+    }
+    &__col:first-child {
+        flex-grow: 1;
+    }
+    &__col + &__col {
+        flex-shrink: 1;
+        text-align: right;
+    }
+
+    /**
+     * Section body
+     */
+    &__rows {
+        max-width: none;
+        margin: 0 0 0;
+        padding: 0 0 1em;
+    }
+
+    &__pu {
+        list-style: none;
+    }
+
+    &__pu + &__pu {
+        margin-top: 1em;
+    }
+
+    /**
+     * Section footer
+     */
+    &__disclaimer {
+        padding-top: 1em;
+        border-top: 2px solid $color-off-black;
+    }
+
+}
+
+.pu-item-nu-row { // li
+
+    display: flex;
+
+    &__pu-id {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    &__logo {
+        display: none;
+        width: 200px;
+        height: 50px;
+
+        @media (min-width: $mq-m) {
+            display: block;
+        }
+
+        // Remove this when images have been implemented
+        background-color: $color-secondary;
+        color: $color-white;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    &__name {
+        margin: 0;
+        font-weight: normal;
+        @media (min-width: $mq-m) {
+            margin: .8em 0 0 1em;
+        }
+    }
+
+    &__pu-money {
+        flex-shrink: 1;
+        margin: 0;
+        @media (min-width: $mq-m) {
+            margin: .8em 0 0 1em;
+        }
+    }
+
+}
